@@ -50,8 +50,6 @@ export default {
   directives: {
     getclass: {
       update: (el, value) => {
-        console.log('getclass')
-        console.log(value.value)
         let classes = el.classList;
         [].forEach.call(el.classList, _ => {
           /^s\w+$/.test(_) && classes.remove(_);
@@ -81,7 +79,6 @@ export default {
     },
     /* 在一个随机的空白位添加2或4 概率9:1 */
     randomAdd() {
-      console.log('randomAdd')
       let arr = this.shuffle(this.blankIndex())
       let pos = this.getIndexPos(arr.pop())
       // 延时100毫秒添加
@@ -92,10 +89,10 @@ export default {
     },
     /* 添加一个新的方块，并指定索引和里面的内容 */
     newBoxApear(index, num, combin) {
-      let cls = num ? "s" + num : "empty",
-        cb = combin ? " combin" : "",
-        box = document.createElement("div"),
-        pos = this.getIndexPos(index, true);
+      let cls = num ? "s" + num : "empty"
+      let cb = combin ? " combin" : ""
+      let box = document.createElement("div")
+      let pos = this.getIndexPos(index, true)
       box.className = cls + " box" + cb;
       box.style.left = pos.left;
       box.style.top = pos.top;
@@ -143,12 +140,12 @@ export default {
       this.start["y"] = e.changedTouches[0].pageY;
     },
     touchEnd(e) {
-      let curPoint = e.changedTouches[0],
-        x = curPoint.pageX - this.start.x,
-        y = curPoint.pageY - this.start.y,
-        xx = Math.abs(x),
-        yy = Math.abs(y),
-        i = 0;
+      let curPoint = e.changedTouches[0]
+      let x = curPoint.pageX - this.start.x
+      let y = curPoint.pageY - this.start.y
+      let xx = Math.abs(x)
+      let yy = Math.abs(y)
+      let i = 0
       // 移动范围太小 不处理
       if (xx < 50 && yy < 50) return;
       if (xx >= yy) {
@@ -186,19 +183,19 @@ export default {
     },
     /* 移动滑块 i:转置次数 */
     move(i) {
-      let indexs = this.T(Object.keys(String(Array(17))), i), // 记录旋转前的各个位置索引
-        tmp = this.T(this.nums, i), // 把任意方向键转置，当成向左移动
-        hasMove = false, // 一次操作有移动方块时才添加方块
+      let indexs = this.T(Object.keys(String(Array(17))), i) // 记录旋转前的各个位置索引
+      let tmp = this.T(this.nums, i) // 把任意方向键转置，当成向左移动
+      let hasMove = false // 一次操作有移动方块时才添加方块
         /*
                 *记录已经合并过一次的位置 避免重复合并
                 *如 2 2 4 4 在一次合并后应为 4 8 0 0  而非8 4 0 0
                 */
         hasCombin = {};
       tmp.forEach((j, k) => {
-        let newIndex = 0, // 方块挪动后的索引 （转换后的索引）
-          index = indexs[k] - 0, // 换算到转换前的索引
-          thisMoved = false, // 此方块有数字，且被移动了 标记  需要应用动画
-          combinNum = 0; // 方块若有合并，记录合并后的数字
+        let newIndex = 0 // 方块挪动后的索引 （转换后的索引）
+        let index = indexs[k] - 0 // 换算到转换前的索引
+        let thisMoved = false // 此方块有数字，且被移动了 标记  需要应用动画
+        let combinNum = 0; // 方块若有合并，记录合并后的数字
         while (k % 4 && j !== "") {
           if (tmp[k - 1] === "") {
             // 当前位置的前一位置为空,交换俩位置
@@ -236,13 +233,12 @@ export default {
     },
     // 索引index的元素移动到nextIndex
     moveNode(index, nextIndex, combinNum) {
-      console.log(combinNum)
-      let allBox = document.querySelectorAll(".box"),
-        curEle = allBox[index], // 将被移动的元素
-        clone = curEle.cloneNode(true), // 当前元素克隆 包括里面的数组 用作移动动画
-        pEle = curEle.parentNode,
-        curPos = this.getIndexPos(index, true),
-        box = allBox[allBox.length - 1].cloneNode(); // 复制最后一个元素做当前元素的遮罩
+      let allBox = document.querySelectorAll(".box")
+      let curEle = allBox[index] // 将被移动的元素
+      let clone = curEle.cloneNode(true) // 当前元素克隆 包括里面的数组 用作移动动画
+      let pEle = curEle.parentNode
+      let curPos = this.getIndexPos(index, true)
+      let box = allBox[allBox.length - 1].cloneNode(); // 复制最后一个元素做当前元素的遮罩
       box.className = "box empty";
       box.style.left = curPos.left;
       box.style.top = curPos.top;
@@ -284,9 +280,9 @@ export default {
       this.show = 0;
     },
     isPass() {
-      let isOver = true,
-        hasBlank = false,
-        tmp = this.T(this.nums, 1);
+      let isOver = true
+      let hasBlank = false
+      let tmp = this.T(this.nums, 1)
       this.nums.forEach((i, j) => {
         if (
           !i ||
