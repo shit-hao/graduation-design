@@ -190,7 +190,7 @@ export default {
                 *记录已经合并过一次的位置 避免重复合并
                 *如 2 2 4 4 在一次合并后应为 4 8 0 0  而非8 4 0 0
                 */
-        hasCombin = {};
+      let hasCombin = {};
       tmp.forEach((j, k) => {
         let newIndex = 0 // 方块挪动后的索引 （转换后的索引）
         let index = indexs[k] - 0 // 换算到转换前的索引
