@@ -11,6 +11,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "crypto": "^1.0.1",
+    "element-ui": "^2.3.9",
+    "js-base64": "^2.4.5",
+    "js-md5": "^0.7.3",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

@@ -40,6 +40,7 @@
 #app{
     width:100%;
     position:relative;
+    margin: 0 auto;
     font-family: 'Inknut Antiqua','Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 #app ul{
@@ -74,22 +75,6 @@
     align-items:center;
     text-shadow: 2px 2px 10px #555;
 }
-#app button{
-    width:100px;
-    height:50px;
-    line-height:50px;
-    font-size:20px;
-    display:block;
-    cursor:pointer;
-    margin:20px auto;
-    background-color: #2daebf;
-    border-color: #238896;
-    color: white;
-    box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-    border-radius: 4px;
-    transition: background-color 300ms ease-out;
-    animation:bluePulse 2s 4s infinite;
-}
 .box{
     width:25%;
     height:25%;
@@ -100,9 +85,8 @@
     cursor:pointer;
     background: hsla(30,37%,89%,.35);
     border: 1px solid #ccc;
-    box-shadow: 1px 1px 4px;
+    /* box-shadow: 1px 1px 4px; */
     box-sizing: border-box;
-    -webkit-user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +95,7 @@
 }
 .empty{
     background:#f0f0f0;
-    box-shadow: inset 1px 1px 3px  #929292;
+    /* box-shadow: inset 1px 1px 3px  #929292; */
 }
 .combin{
     z-index:1;
@@ -123,11 +107,11 @@
 
 .s2{
     background: #f8f3e8;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); 
+    /* box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);  */
 }
 .s4{
     background: #ede0c8;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); 
+    /* box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);  */
 }
 .s8{
     color: #f9f6f2;
@@ -148,35 +132,35 @@
 .s128{
     color: #f9f6f2;
     background: #edcf72;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+    /* box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286); */
 }
 .s256{
     color: #f9f6f2;
     background: #edcc61;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+    /* box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048); */
 }
 .s512{
     color: #f9f6f2;
     background: #edc850;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+    /* box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381); */
 }
 .s1024{
     color: #f9f6f2;
     background: #edc53f;
     font-size:2em;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+    /* box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571); */
 }
 .s2048{
     color: #f9f6f2;
     background: #edc22e;
     font-size:2em;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    /* box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333); */
 }
 .s4096{
     color: #f9f6f2;
     background: #61c0ed;
     font-size:2em;
-    box-shadow: 0 0 30px 10px hsla(211, 84%, 70%, 0.45),inset 0 0 0 1px hsla(0,0%,100%,.33333);
+    /* box-shadow: 0 0 30px 10px hsla(211, 84%, 70%, 0.45),inset 0 0 0 1px hsla(0,0%,100%,.33333); */
  
 }
 .show-transition {
